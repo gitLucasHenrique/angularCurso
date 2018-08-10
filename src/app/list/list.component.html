@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-12 pt-3">
+        <div ngbDropdown class="d-inline-block float-right">
+          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Ordenar por {{orderByProperty}}</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button class="dropdown-item" (click)="orderBy('title')">Title</button>
+            <button class="dropdown-item" (click)="orderBy('value')">Value</button>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="form-group mr-3 ml-3 pt-2">
+            <input [(ngModel)]='searchField' type="text" class="form-control" placeholder="Pesquisar">
+        </div>
+    </div>
+
+    <div class="col-12">
+        <app-sale-card [showButton]="true" [sale]="sale" *ngFor="let sale of list | orderBy: orderByProperty | filterBy: ['title', 'value']:searchField"></app-sale-card>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+<div class="card m-3" *ngIf="sale" textAlign="center"> 
+    <div class="card-body">
+      <h5 class="card-title" appTextColor="#0A2A0A">{{sale.title}}</h5>
+      <p class="card-text">{{sale.value | currency:'BRL'}}</p>
+      <div *ngIf="showDetails">
+          <p class="card-text" appTextColor="#000">Cliente: {{sale.customer}}</p>
+          <p class="card-text">Empresa: {{sale.company}}</p>
+          <p class="card-text" appTextColor="#000">Data: {{sale.createdAt | date:'dd/MM/yyyy'}}</p>
+      </div>
+      <a  *ngIf="showButton" routerLink="/details/{{sale.id}}" class="btn btn-primary float-right">Ver detalhes</a>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<app-sale-card [showDetails]="true" [sale]="sale" *ngIf="sale ; else elseTemplate">
+  </app-sale-card>
+
+  <ng-template #elseTemplate>
+      <h1 class="center" >Página não encontada</h1>  
+  </ng-template>
+<!--
+<div class="card m-3" *ngIf="sale ; else elseTemplate">
+  <div class="card-body">
+    <h5 class="card-title"> {{ sale.title }}</h5>
+    <p class="card-text">Preço: {{ sale.value }} </p>
+    <p class="card-text">Cliente: {{ sale.customer }} </p>
+  </div>
+</div>
+
+<ng-template #elseTemplate>
+    <h1>Página não encontada</h1>  
+</ng-template>
+-->

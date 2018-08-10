@@ -1,0 +1,48 @@
+<form (ngSubmit)="onSubmit()" #formularioLocal="ngForm">
+
+  <div class="form-group">
+    <label>Título</label>
+    <input name="title" required minlength="4" maxlength="30" #titleLocal="ngModel" [(ngModel)]="sale.title" type="text" class="form-control" placeholder="Título">
+    <small id="titleHelp" *ngIf="!titleLocal.valid && (titleLocal.dirty || titleLocal.touched)"class="form-text text-danger">
+        *Título da venda deve conter no mínimo 4 caracteres e no máximo 30
+    </small>
+  </div>
+  <div class="form-group">
+    <label>Cliente (E-mail)</label>
+    <input name="customer" required email #customerLocal="ngModel" [(ngModel)]="sale.customer" type="text" class="form-control" placeholder="Email">
+    <small id="customerHelp" *ngIf="!customerLocal.valid && (customerLocal.dirty || customerLocal.touched)"class="form-text text-danger">
+        *Digite um e-mail válido
+    </small>
+  </div>
+  <div class="form-group">
+    <label>Empresa</label>
+    <input type="text" required minlength="4" class="form-control" minlength="4" [(ngModel)]="sale.company" name="company" #company="ngModel" required placeholder="Empresa">
+    <small *ngIf="!company.valid && (company.dirty || company.touched)" class="form-text text-danger">
+      *A empresa precisa ter ao menos 4 caracteres.
+    </small>
+  </div>
+  <div class="form-group">
+    <label>Preço</label>
+    <input name="value" required currencyMask #valueLocal="ngModel" [(ngModel)]="sale.value" [options]="{align: 'left', prefix: 'R$ ', thousands: '.', decimal: ',' }" type="text" class="form-control" placeholder="Preço">
+    <small id="valueHelp" *ngIf="!valueLocal.valid && (valueLocal.dirty || valueLocal.touched)"class="form-text text-danger">
+        *Por favor verifique o campo preço
+    </small>
+    <div class="form-group">
+      <!--
+      <input name="date" required minlength="4" #dateLocal="ngModel" [(ngModel)]="sale.date" type="date" class="form-control" placeholder="">
+        <small id="dateHelp" *ngIf="!dateLocal.valid && (dateLocal.dirty || dateLocal.touched)"class="form-text text-danger">
+          *Selecione uma data válida
+        </small>
+      -->
+      <label>Data de criação</label>
+      <div>
+        <ngb-datepicker name="date" #dateLocal="ngbDatepicker" [(ngModel)]="sale.createdAt"></ngb-datepicker>
+      </div>
+
+      
+    </div>
+  </div>
+  {{sale | json}}
+  <button type="submit" class="btn btn-primary btn-block" [disabled]="!formularioLocal.valid">Enviar</button>
+
+</form>

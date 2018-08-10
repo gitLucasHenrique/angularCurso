@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+// if you'd like to use it without importing all of bootstrap it requires
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
+
+// regular style toast
+@import '~ngx-toastr/toastr.css';
+
+// bootstrap style toast
+// or import a bootstrap 4 alert styled design (SASS ONLY)
+// should be after your bootstrap imports, it uses bs4 variables, mixins, functions
+@import '~ngx-toastr/toastr-bs4-alert';
+
+::-moz-selection { /* Code for Firefox */
+    background: rgb(77, 219, 84);
+}
+
+::selection {
+    background: rgb(77, 219, 84);
+}
+
+
+body {
+    background-color: #d0d0d0 !important;
+}
+
+html, body, .container-fluid {
+    height: 100%;
+}
+
+.container-fluid .row:first-of-type {
+    min-height: 100%;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    background-color: rgb(12, 99, 45) !important;
+    border-top: 1px solid #066425 !important;
+    border-bottom: 1px solid #066425 !important;
+    border-left-color: rgb(4, 99, 17) !important;
+    border-right-color: rgb(8, 124, 34) !important;
+}
+.btn-primary:hover{
+    background-color: rgb(31, 180, 88) !important;
+}
+
+.list-group-item.active {
+    background-color: rgb(12, 99, 45) !important;
+    border-top: 1px solid #000000 !important;
+    border-bottom: 1px solid #000000 !important;
+    border-left-color: #fff !important;
+    border-right-color: #fff !important;
+  }
+  
+.list-group-item:hover {
+   background-color: rgb(131, 180, 88) !important;
+}

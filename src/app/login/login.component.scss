@@ -1,0 +1,14 @@
+.login-row {
+    height: 100%;
+    background: url('http://danelli.com.br/site/wp-content/uploads/2013/02/209830_Papel-de-Parede-Cidade-209830_1600x12001.jpg');
+   
+    .login-col {
+      height: 100%;
+      display: flex;
+      align-items: center;
+   
+      form {
+        width: 100%;
+      }
+    }
+  }
